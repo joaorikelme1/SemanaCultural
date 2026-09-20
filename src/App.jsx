@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Icon = ({ name, size = 20 }) => {
   const paths = {
@@ -80,8 +81,8 @@ function App() {
           <div className="hero-grain" />
           <div className="hero-copy reveal">
             <div className="eyebrow"><span>Projeto escolar</span> • 3º B • 2026</div>
-            <h1>Onde a arte<br />vira <em>encontro.</em></h1>
-            <p>Um espaço criado pelo 3º B para investigar, interpretar e compartilhar as obras do PAS/UnB durante a nossa Semana Cultural.</p>
+            <h1>Entre caminhos<br />e <em>memórias.</em></h1>
+            <p>O 3º B atravessa duas histórias sobre jornadas muito diferentes — da aldeia quase inalcançável de Kafka à viagem de Ivine para longe da Síria.</p>
             <div className="hero-actions">
               <button className="primary-button" onClick={() => goTo('obras')}>Conheça as obras <Icon name="arrow" /></button>
               <button className="text-button" onClick={() => goTo('projeto')}>Sobre o projeto</button>
@@ -96,11 +97,10 @@ function App() {
             <div className="sun-shape" />
             <div className="tape tape-one" />
             <div className="paper-card">
-              <span className="paper-kicker">Caderno de pesquisa</span>
-              <div className="paper-line short" />
-              <div className="paper-line" />
-              <div className="paper-line" />
-              <blockquote>“Toda obra abre uma nova forma de olhar.”</blockquote>
+              <span className="paper-kicker">Nosso ponto de partida</span>
+              <div className="hero-work hero-work--kafka"><b>01</b><span>A Próxima Aldeia<small>Franz Kafka</small></span></div>
+              <div className="paper-route"><i /><i /><i /><i /></div>
+              <div className="hero-work hero-work--ivine"><b>02</b><span>Uma Viagem da Síria<small>Ivine e o travesseiro</small></span></div>
               <div className="paper-sign">3º B <span>✦</span></div>
             </div>
             <div className="blue-note">PAS<br /><strong>UnB</strong></div>
@@ -113,10 +113,10 @@ function App() {
         <section className="intro section" id="projeto">
           <div className="section-label">01 — O projeto</div>
           <div className="intro-grid">
-            <div><h2>Mais que um trabalho.<br /><span>Uma experiência coletiva.</span></h2></div>
+            <div><h2>Duas viagens.<br /><span>Novos modos de olhar.</span></h2></div>
             <div className="intro-text">
-              <p>A Semana Cultural transforma a escola em um lugar de descoberta. A partir de duas obras selecionadas do PAS da Universidade de Brasília, nossa turma conecta arte, história, sociedade e novas ideias.</p>
-              <p>Este site é o ponto de encontro do projeto: aqui reuniremos nossas pesquisas, processos criativos e tudo o que nasceu dessa experiência.</p>
+              <p>Em <strong>A Próxima Aldeia</strong>, a brevidade de Franz Kafka nos provoca a pensar sobre o tempo, a distância e os limites de uma vida. Já <strong>Uma Viagem da Síria</strong> acompanha Ivine e seu travesseiro em uma narrativa marcada por deslocamento e lembranças.</p>
+              <p>Nosso trabalho aproxima essas jornadas para investigar o que significa partir, tentar chegar e levar consigo aquilo que ajuda a preservar a própria história.</p>
             </div>
           </div>
 
@@ -124,7 +124,7 @@ function App() {
             <article>
               <span className="principle-icon coral"><Icon name="lightbulb" /></span>
               <strong>Investigar</strong>
-              <p>Conhecer o contexto, os autores e as ideias por trás de cada obra.</p>
+              <p>Conhecer os contextos e as linguagens que dão forma a cada jornada.</p>
               <span className="number">01</span>
             </article>
             <article>
@@ -146,39 +146,53 @@ function App() {
           <div className="works-heading">
             <div>
               <div className="section-label light">02 — As obras</div>
-              <h2>Duas obras.<br />Muitas possibilidades.</h2>
+              <h2>Duas jornadas.<br />Um encontro de olhares.</h2>
             </div>
-            <p>Assim que recebermos os temas, este espaço ganhará vida com análises, curiosidades e a produção do 3º B.</p>
+            <p>De uma parábola literária sobre uma aldeia próxima a uma história de refúgio atravessada por fronteiras: nossa pesquisa começa pelo movimento.</p>
           </div>
 
           <div className="work-list">
-            <article className="work-card work-card-one">
+            <Link to="/obras/a-proxima-aldeia" className="work-card work-card-one" aria-label="Abrir página da obra A Próxima Aldeia">
               <div className="work-visual">
                 <span className="work-index">01</span>
-                <div className="abstract-art art-one"><i /><i /><i /></div>
-                <span className="waiting-stamp">Em definição</span>
+                <div className="story-poster kafka-poster" aria-hidden="true">
+                  <span className="kafka-sun" />
+                  <span className="kafka-road" />
+                  <span className="kafka-house house-one" />
+                  <span className="kafka-house house-two" />
+                  <span className="kafka-traveler" />
+                </div>
+                <span className="waiting-stamp">Literatura</span>
               </div>
               <div className="work-info">
-                <span className="tag">Obra do PAS</span>
-                <h3>Primeira obra</h3>
-                <p>Em breve, você encontrará aqui a apresentação da obra, seu contexto e as interpretações da turma.</p>
-                <span className="coming-soon">Conteúdo em preparação <Icon name="clock" size={17} /></span>
+                <span className="tag">Franz Kafka • conto breve</span>
+                <h3>A Próxima Aldeia</h3>
+                <p>Uma viagem aparentemente simples se torna impossível diante da brevidade da vida. O texto de Kafka desloca nossa percepção de tempo, distância e destino.</p>
+                <div className="theme-list"><span>tempo</span><span>caminho</span><span>existência</span></div>
+                <span className="coming-soon">Abrir página da obra <Icon name="arrow" size={17} /></span>
               </div>
-            </article>
+            </Link>
 
-            <article className="work-card work-card-two">
+            <Link to="/obras/uma-viagem-da-siria" className="work-card work-card-two" aria-label="Abrir página da obra Uma Viagem da Síria">
               <div className="work-visual">
                 <span className="work-index">02</span>
-                <div className="abstract-art art-two"><i /><i /><i /></div>
-                <span className="waiting-stamp">Em definição</span>
+                <div className="story-poster ivine-poster" aria-hidden="true">
+                  <span className="ivine-moon" />
+                  <span className="ivine-stars">✦ · ✦</span>
+                  <span className="ivine-route" />
+                  <span className="pillow"><i /><b>♥</b></span>
+                </div>
+                <span className="waiting-stamp">Narrativa</span>
               </div>
               <div className="work-info">
-                <span className="tag">Obra do PAS</span>
-                <h3>Segunda obra</h3>
-                <p>Este espaço será dedicado às descobertas, referências e produções inspiradas pela segunda obra.</p>
-                <span className="coming-soon">Conteúdo em preparação <Icon name="clock" size={17} /></span>
+                <span className="tag">Ivine • história de refúgio</span>
+                <h3>Uma Viagem da Síria</h3>
+                <h4>A história de Ivine e o travesseiro</h4>
+                <p>Uma trajetória contada a partir das lembranças de Ivine e de um objeto afetivo que atravessa a viagem com ela — elo entre o que ficou e a esperança de recomeçar.</p>
+                <div className="theme-list"><span>memória</span><span>refúgio</span><span>acolhimento</span></div>
+                <span className="coming-soon">Abrir página da obra <Icon name="arrow" size={17} /></span>
               </div>
-            </article>
+            </Link>
           </div>
         </section>
 
@@ -199,7 +213,7 @@ function App() {
             <p>Estudantes do CEd 15 de Ceilândia, no último ano do ensino médio, construindo juntos uma Semana Cultural feita de curiosidade, colaboração e muita personalidade.</p>
             <div className="class-facts">
               <div><strong>1</strong><span>turma unida</span></div>
-              <div><strong>2</strong><span>obras do PAS</span></div>
+              <div><strong>2</strong><span>jornadas em foco</span></div>
               <div><strong>∞</strong><span>ideias para criar</span></div>
             </div>
           </div>
@@ -210,7 +224,7 @@ function App() {
           <div>
             <span>Espaço para educadores</span>
             <h2>Professor(a), acompanhe nosso percurso.</h2>
-            <p>Este site será atualizado com as etapas, materiais e resultados do projeto ao longo da Semana Cultural.</p>
+            <p>Acompanhe nossas leituras de Kafka e da história de Ivine, além dos materiais e resultados produzidos para a Semana Cultural.</p>
           </div>
           <button onClick={() => goTo('obras')}>Ver andamento <Icon name="arrow" /></button>
         </section>
