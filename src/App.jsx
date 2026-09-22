@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import classPhoto from '../images/terceirob.jpeg'
+import schoolLogo from '../images/logoced15.jpeg'
 
 const Icon = ({ name, size = 20 }) => {
   const paths = {
@@ -55,7 +57,7 @@ function App() {
     <div className="site-shell">
       <header className="header">
         <button className="brand" onClick={() => goTo('inicio')} aria-label="Ir para o início">
-          <span className="brand-mark">15</span>
+          <span className="brand-logo"><img src={schoolLogo} alt="" /></span>
           <span className="brand-copy">
             <strong>CEd 15</strong>
             <small>Ceilândia</small>
@@ -115,7 +117,7 @@ function App() {
           <div className="intro-grid">
             <div><h2>Duas viagens.<br /><span>Novos modos de olhar.</span></h2></div>
             <div className="intro-text">
-              <p>Em <strong>A Próxima Aldeia</strong>, a brevidade de Franz Kafka nos provoca a pensar sobre o tempo, a distância e os limites de uma vida. Já <strong>Uma Viagem da Síria</strong> acompanha Ivine e seu travesseiro em uma narrativa marcada por deslocamento e lembranças.</p>
+              <p>Em <strong>A Próxima Aldeia</strong>, a prosa breve de Franz Kafka nos provoca a pensar sobre o tempo, a distância e os limites de uma vida. Já <strong>Uma Viagem da Síria</strong>, curta animado da UNICEF, acompanha a história real de Ivine e de Pillow em uma narrativa marcada por deslocamento e lembranças.</p>
               <p>Nosso trabalho aproxima essas jornadas para investigar o que significa partir, tentar chegar e levar consigo aquilo que ajuda a preservar a própria história.</p>
             </div>
           </div>
@@ -151,6 +153,11 @@ function App() {
             <p>De uma parábola literária sobre uma aldeia próxima a uma história de refúgio atravessada por fronteiras: nossa pesquisa começa pelo movimento.</p>
           </div>
 
+          <div className="cards-instruction">
+            <span className="instruction-icon"><Icon name="arrow" size={19} /></span>
+            <div><strong>Explore cada obra</strong><small>Clique em um dos cards abaixo para abrir a página completa.</small></div>
+          </div>
+
           <div className="work-list">
             <Link to="/obras/a-proxima-aldeia" className="work-card work-card-one" aria-label="Abrir página da obra A Próxima Aldeia">
               <div className="work-visual">
@@ -169,7 +176,7 @@ function App() {
                 <h3>A Próxima Aldeia</h3>
                 <p>Uma viagem aparentemente simples se torna impossível diante da brevidade da vida. O texto de Kafka desloca nossa percepção de tempo, distância e destino.</p>
                 <div className="theme-list"><span>tempo</span><span>caminho</span><span>existência</span></div>
-                <span className="coming-soon">Abrir página da obra <Icon name="arrow" size={17} /></span>
+                <span className="coming-soon">Clique para ver a página <Icon name="arrow" size={17} /></span>
               </div>
             </Link>
 
@@ -185,12 +192,12 @@ function App() {
                 <span className="waiting-stamp">Narrativa</span>
               </div>
               <div className="work-info">
-                <span className="tag">Ivine • história de refúgio</span>
+                <span className="tag">UNICEF • curta animado</span>
                 <h3>Uma Viagem da Síria</h3>
                 <h4>A história de Ivine e o travesseiro</h4>
-                <p>Uma trajetória contada a partir das lembranças de Ivine e de um objeto afetivo que atravessa a viagem com ela — elo entre o que ficou e a esperança de recomeçar.</p>
+                <p>A história real de uma menina síria de 14 anos ganha forma em uma animação na qual Pillow, seu travesseiro e amigo imaginário, ajuda a narrar medo, perda e esperança.</p>
                 <div className="theme-list"><span>memória</span><span>refúgio</span><span>acolhimento</span></div>
-                <span className="coming-soon">Abrir página da obra <Icon name="arrow" size={17} /></span>
+                <span className="coming-soon">Clique para ver a página <Icon name="arrow" size={17} /></span>
               </div>
             </Link>
           </div>
@@ -198,19 +205,22 @@ function App() {
 
         <section className="class-section section" id="turma">
           <div className="class-collage">
-            <div className="photo-placeholder">
-              <div className="people-row"><span /><span /><span /><span /><span /></div>
-              <strong>Nossa turma</strong>
-              <small>foto em breve</small>
-            </div>
+            <figure className="class-photo">
+              <img src={classPhoto} alt="Turma do 3º B reunida com a professora Kessily em sala de aula" />
+              <figcaption><strong>16.04.2026</strong><span>O dia do convite à nossa madrinha</span></figcaption>
+            </figure>
             <div className="class-sticker">3º<br /><strong>B</strong></div>
             <span className="tape tape-two" />
-            <span className="class-note">feito por nós<br />— para todos ✦</span>
+            <span className="class-note">um dia para<br />guardar na memória ✦</span>
           </div>
           <div className="class-copy">
             <div className="section-label">03 — Quem faz</div>
             <h2>Somos o <span>3º B.</span></h2>
             <p>Estudantes do CEd 15 de Ceilândia, no último ano do ensino médio, construindo juntos uma Semana Cultural feita de curiosidade, colaboração e muita personalidade.</p>
+            <div className="class-memory">
+              <span>16 de abril de 2026</span>
+              <p>Nesse dia, reunimos a turma para fazer um convite muito especial: pedimos à professora <strong>Kessily</strong> que fosse nossa madrinha. A foto registra o começo de mais uma memória que levaremos do terceiro ano.</p>
+            </div>
             <div className="class-facts">
               <div><strong>1</strong><span>turma unida</span></div>
               <div><strong>2</strong><span>jornadas em foco</span></div>
@@ -232,7 +242,7 @@ function App() {
 
       <footer>
         <div className="footer-brand">
-          <span className="brand-mark brand-mark--footer">15</span>
+          <span className="brand-logo brand-logo--footer"><img src={schoolLogo} alt="Logo do CEd 15 de Ceilândia" /></span>
           <div><strong>Semana Cultural</strong><small>CEd 15 de Ceilândia • 3º B</small></div>
         </div>
         <p>Um projeto feito com ideias, afeto e educação pública.</p>
