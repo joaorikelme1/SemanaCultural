@@ -92,6 +92,13 @@ button { color: inherit; }
 .dot-one { width: 15px; height: 15px; right: 45px; bottom: 60px; }
 .dot-two { width: 8px; height: 8px; left: 50px; top: 80px; }
 
+.reader-notice { margin: 0 max(24px, calc((100vw - 1180px) / 2)) 70px; padding: 24px 28px; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; color: var(--ink); background: #fff7d8; border: 1.5px solid var(--ink); box-shadow: 6px 6px 0 var(--yellow); position: relative; }
+.reader-notice::before { content: 'LEIA ANTES'; position: absolute; right: 18px; top: -9px; padding: 4px 8px; color: white; background: var(--coral); font: 800 8px 'Manrope'; letter-spacing: .14em; transform: rotate(2deg); }
+.reader-notice-icon { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--ink); font: 800 19px 'Manrope'; }
+.reader-notice strong { display: block; margin: 1px 0 6px; font: 800 15px 'Manrope'; }
+.reader-notice p { max-width: 920px; margin: 0; color: #53605d; font-size: 13px; line-height: 1.65; }
+.reader-notice b { color: var(--ink); }
+
 .section { padding: 105px max(24px, calc((100vw - 1180px) / 2)); }
 .intro { background: var(--paper); }
 .intro-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 85px; padding-top: 24px; }
@@ -253,6 +260,8 @@ footer > p { color: #aab7b4; font-size: 12px; }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 18px; }
   .hero-meta { flex-wrap: wrap; gap: 12px 20px; }
   .hero-art { height: 400px; transform: scale(.9); }
+  .reader-notice { margin-bottom: 55px; padding: 23px 20px; grid-template-columns: 1fr; }
+  .reader-notice-icon { width: 34px; height: 34px; }
   .sun-shape { width: 300px; height: 300px; }
   .paper-card { width: 270px; height: 335px; padding: 45px 30px; }
   .hero-work { margin-top: 26px; }

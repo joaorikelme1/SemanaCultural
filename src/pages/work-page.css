@@ -88,6 +88,9 @@
 .page-art--ivine .page-art-word { color: #17324b; }
 .scroll-hint { position: absolute; bottom: 34px; left: max(28px, calc((100vw - 1160px) / 2)); display: flex; align-items: center; gap: 10px; text-decoration: none; text-transform: uppercase; font: 700 9px 'Manrope'; letter-spacing: .14em; }
 .scroll-hint span { width: 28px; height: 28px; border: 1px solid var(--page-ink); border-radius: 50%; display: grid; place-items: center; }
+.work-reader-notice { margin: 0; padding: 25px max(28px, calc((100vw - 1160px) / 2)); display: grid; grid-template-columns: 150px 1fr; gap: 35px; align-items: center; color: var(--page-paper); background: var(--page-accent); border: 0; }
+.work-reader-notice > span { text-transform: uppercase; font: 800 10px 'Manrope'; letter-spacing: .15em; }
+.work-reader-notice p { max-width: 850px; margin: 0; font-size: 13px; line-height: 1.65; }
 
 .page-section { padding: 110px max(28px, calc((100vw - 1160px) / 2)); }
 .page-section-label { color: var(--page-accent); font: 800 10px 'Manrope'; text-transform: uppercase; letter-spacing: .17em; }
@@ -207,6 +210,7 @@
   .work-hero h1 { font-size: clamp(50px, 17vw, 75px); }
   .work-hero h2 { font-size: 23px; }
   .work-lead { font-size: 15px; }
+  .work-reader-notice { padding: 23px 22px; grid-template-columns: 1fr; gap: 8px; }
   .page-art { width: 310px; height: 410px; min-width: 310px; min-height: 410px; border-width: 9px; }
   .page-kafka-sun { width: 110px; height: 110px; top: 43px; }
   .page-house { transform: scale(.76); }

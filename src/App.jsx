@@ -112,6 +112,14 @@ function App() {
           </div>
         </section>
 
+        <aside className="reader-notice" aria-label="Aviso sobre o conteúdo do site">
+          <span className="reader-notice-icon">!</span>
+          <div>
+            <strong>Uma nota para quem está lendo</strong>
+            <p>Este site não apresenta uma pesquisa aprofundada. O conteúdo foi preparado pela turma como um <b>complemento introdutório</b> sobre as obras e não substitui a leitura, a análise completa ou outras fontes de estudo.</p>
+          </div>
+        </aside>
+
         <section className="intro section" id="projeto">
           <div className="section-label">01 — O projeto</div>
           <div className="intro-grid">
@@ -219,7 +227,7 @@ function App() {
             <p>Estudantes do CEd 15 de Ceilândia, no último ano do ensino médio, construindo juntos uma Semana Cultural feita de curiosidade, colaboração e muita personalidade.</p>
             <div className="class-memory">
               <span>16 de abril de 2026</span>
-              <p>Nesse dia, reunimos a turma para fazer um convite muito especial: pedimos à professora <strong>Kessily</strong> que fosse nossa madrinha. A foto registra o começo de mais uma memória que levaremos do terceiro ano.</p>
+              <p>Uma foto da nossa turma original, em que nesse dia, reunimos a turma para fazer um convite muito especial: pedimos à professora <strong>Kessily</strong> que fosse nossa madrinha. A foto registra o começo de mais uma memória que levaremos do terceiro ano.</p>
             </div>
             <div className="class-facts">
               <div><strong>1</strong><span>turma unida</span></div>

@@ -197,6 +197,11 @@ function WorkPage({ work }) {
           <a href="#sobre" className="scroll-hint">Começar a leitura <span>↓</span></a>
         </section>
 
+        <aside className="work-reader-notice" aria-label="Aviso sobre o conteúdo desta página">
+          <span>Nota ao leitor</span>
+          <p>Esta página é um material introdutório e complementar produzido pelo 3º B. Ela não pretende ser uma pesquisa aprofundada nem substituir a leitura e o estudo completo da obra.</p>
+        </aside>
+
         <section className="page-intro page-section" id="sobre">
           <div className="page-section-label">01 — Primeiro contato</div>
           <div className="page-intro-grid">
