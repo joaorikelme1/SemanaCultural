@@ -36,6 +36,8 @@ button { color: inherit; }
 }
 .brand { display: flex; align-items: center; gap: 11px; border: 0; background: none; cursor: pointer; padding: 0; text-align: left; }
 .brand-mark { width: 43px; height: 43px; display: grid; place-items: center; color: white; background: var(--coral); border-radius: 50% 46% 50% 42%; transform: rotate(-6deg); font: 800 18px/1 'Manrope'; box-shadow: 3px 3px 0 var(--ink); }
+.brand-logo { width: 47px; height: 47px; display: block; overflow: hidden; border: 1.5px solid var(--ink); border-radius: 9px; background: #e7f3df; box-shadow: 3px 3px 0 var(--coral); transform: rotate(-2deg); }
+.brand-logo img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .brand-copy { display: grid; line-height: 1.05; }
 .brand-copy strong { font: 800 16px 'Manrope'; }
 .brand-copy small { margin-top: 4px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .14em; }
@@ -115,9 +117,15 @@ button { color: inherit; }
 .works-heading { display: grid; grid-template-columns: 1fr 410px; align-items: end; gap: 50px; }
 .works-heading h2 { margin-top: 17px; }
 .works-heading > p { margin: 0 0 6px; color: #b9c4c0; line-height: 1.7; }
-.work-list { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 65px; }
-.work-card { background: #f8f4eb; color: var(--ink); display: grid; grid-template-columns: .82fr 1.18fr; min-height: 390px; overflow: hidden; text-decoration: none; transition: transform .28s ease, box-shadow .28s ease; }
-.work-card:hover { transform: translateY(-7px); box-shadow: 0 18px 0 rgba(0, 0, 0, .18); }
+.cards-instruction { width: max-content; max-width: 100%; margin: 47px 0 24px; padding: 13px 18px 13px 13px; display: flex; align-items: center; gap: 13px; color: var(--ink); background: var(--yellow); border: 1.5px solid var(--paper); box-shadow: 5px 5px 0 var(--coral); transform: rotate(-1deg); }
+.instruction-icon { width: 37px; height: 37px; flex: 0 0 37px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--ink); transform: rotate(45deg); }
+.cards-instruction div { display: grid; gap: 2px; }
+.cards-instruction strong { font: 800 13px 'Manrope'; }
+.cards-instruction small { font-size: 11px; font-weight: 600; }
+.work-list { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 0; }
+.work-card { background: #f8f4eb; color: var(--ink); display: grid; grid-template-columns: .82fr 1.18fr; min-height: 390px; overflow: hidden; text-decoration: none; cursor: pointer; border: 2px solid transparent; transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease; }
+.work-card:hover { transform: translateY(-7px); border-color: var(--yellow); box-shadow: 0 18px 0 rgba(0, 0, 0, .18); }
+.work-card:focus-visible { outline: 4px solid var(--yellow); outline-offset: 5px; }
 .work-card:hover .story-poster { transform: rotate(0deg) scale(1.025); }
 .work-card:hover .coming-soon svg { transform: translateX(5px); }
 .work-card-two { grid-template-columns: 1.18fr .82fr; }
@@ -154,11 +162,18 @@ button { color: inherit; }
 .work-info p { color: var(--muted); font-size: 15px; line-height: 1.7; margin: 0; max-width: 590px; }
 .theme-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
 .theme-list span { padding: 6px 10px; border: 1px solid var(--line); border-radius: 20px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; background: var(--paper); }
-.coming-soon { display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 22px; font-size: 12px; font-weight: 700; border-bottom: 1px solid var(--ink); }
+.coming-soon { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: auto; padding: 12px 15px; color: white; background: var(--ink); border: 1.5px solid var(--ink); box-shadow: 4px 4px 0 var(--coral); font-size: 12px; font-weight: 700; transition: background .2s, color .2s; }
+.work-card:hover .coming-soon { color: var(--ink); background: var(--yellow); }
 .coming-soon svg { transition: transform .2s ease; }
 
 .class-section { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 105px; }
 .class-collage { min-height: 470px; position: relative; }
+.class-photo { width: 94%; margin: 0; height: 390px; background: var(--paper); border: 10px solid var(--paper); box-shadow: 10px 11px 0 rgba(24,42,40,.14); transform: rotate(-2deg); position: relative; overflow: hidden; }
+.class-photo img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; filter: saturate(.9) contrast(1.02); transition: transform .5s ease, filter .5s ease; }
+.class-photo:hover img { transform: scale(1.018); filter: saturate(1) contrast(1); }
+.class-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 38px 18px 14px; display: flex; align-items: end; justify-content: space-between; gap: 15px; color: white; background: linear-gradient(transparent, rgba(15,27,25,.84)); }
+.class-photo figcaption strong { font: 800 13px 'Manrope'; letter-spacing: .08em; }
+.class-photo figcaption span { font: 600 10px 'DM Sans'; text-transform: uppercase; letter-spacing: .1em; text-align: right; }
 .photo-placeholder { width: 82%; height: 390px; background: #cad7c6; border: 10px solid var(--paper); box-shadow: 10px 11px 0 rgba(24,42,40,.14); transform: rotate(-3deg); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
 .photo-placeholder::after { content: ''; position: absolute; width: 300px; height: 300px; border: 1px solid rgba(24,42,40,.13); border-radius: 50%; }
 .people-row { display: flex; align-items: end; height: 110px; z-index: 1; }
@@ -170,11 +185,15 @@ button { color: inherit; }
 .people-row span:nth-child(5)::before { background: #6c4938; }
 .photo-placeholder strong { margin-top: 18px; font: 800 24px 'Manrope'; z-index: 1; }
 .photo-placeholder small { text-transform: uppercase; letter-spacing: .15em; margin-top: 6px; z-index: 1; }
-.class-sticker { position: absolute; right: 3%; top: 20px; width: 110px; height: 110px; color: white; background: var(--coral); border-radius: 49% 51% 44% 56%; display: grid; place-content: center; text-align: center; transform: rotate(9deg); font: 600 18px/1 'Manrope'; box-shadow: 6px 6px 0 var(--ink); z-index: 4; }
+.class-sticker { position: absolute; right: 4%; top: -82px; width: 110px; height: 110px; color: white; background: var(--coral); border-radius: 49% 51% 44% 56%; display: grid; place-content: center; text-align: center; transform: rotate(9deg); font: 600 18px/1 'Manrope'; box-shadow: 6px 6px 0 var(--ink); z-index: 4; }
 .class-sticker strong { font-size: 43px; }
 .tape-two { left: 31%; top: -13px; transform: rotate(-2deg); }
 .class-note { position: absolute; bottom: 5px; right: 3%; font: 700 17px/1.45 'Playfair Display'; transform: rotate(-5deg); color: var(--coral-dark); }
 .class-copy > p { color: var(--muted); font-size: 16px; line-height: 1.75; margin: 26px 0 35px; }
+.class-memory { margin: -10px 0 33px; padding: 20px 22px; border-left: 3px solid var(--coral); background: rgba(255,253,247,.65); }
+.class-memory > span { display: block; color: var(--coral-dark); font: 800 9px 'Manrope'; text-transform: uppercase; letter-spacing: .14em; }
+.class-memory p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.class-memory strong { color: var(--ink); }
 .class-facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); padding-top: 24px; }
 .class-facts div { display: flex; flex-direction: column; border-right: 1px solid var(--line); padding-left: 20px; }
 .class-facts div:first-child { padding-left: 0; }
@@ -193,6 +212,7 @@ button { color: inherit; }
 footer { padding: 52px max(24px, calc((100vw - 1180px) / 2)); background: var(--ink); color: white; display: flex; align-items: center; justify-content: space-between; gap: 35px; }
 .footer-brand { display: flex; align-items: center; gap: 14px; }
 .brand-mark--footer { box-shadow: 3px 3px 0 var(--yellow); }
+.brand-logo--footer { border-color: white; box-shadow: 3px 3px 0 var(--yellow); }
 .footer-brand div { display: grid; }
 .footer-brand strong { font: 700 15px 'Manrope'; }
 .footer-brand small { color: #aab7b4; font-size: 11px; margin-top: 4px; }
@@ -249,9 +269,12 @@ footer > p { color: #aab7b4; font-size: 12px; }
   .work-visual { min-height: 300px; }
   .work-info { min-height: 280px; }
   .class-section { gap: 60px; }
-  .class-collage { min-height: 390px; }
+  .class-collage { min-height: 320px; }
+  .class-photo { width: 100%; height: auto; aspect-ratio: 4 / 3; }
   .photo-placeholder { height: 340px; }
-  .class-sticker { right: 0; }
+  .class-sticker { top: -62px; right: -4px; width: 88px; height: 88px; }
+  .class-sticker strong { font-size: 35px; }
+  .class-note { bottom: -13px; right: 5px; font-size: 14px; }
   .teacher-section { padding: 35px 28px; grid-template-columns: 1fr; }
   .teacher-section button { grid-column: 1; }
   footer { flex-direction: column; align-items: flex-start; }
